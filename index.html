@@ -1,155 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aayush Pandey | Product Analyst / PM</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aayush Pandey — Portfolio</title>
+  <meta name="description" content="Aayush Pandey — Data Analyst, Automation Developer, ITGC Audit Analyst. Seeking roles in Project Management, Data Analysis and Product Analytics." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional: small icon -->
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="container nav-container">
-      <h1 class="logo">Aayush Pandey</h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header class="hero" id="about">
-    <div class="container hero-container">
-      <div class="hero-text">
-        <h2>Hi, I'm Aayush Pandey</h2>
-        <p>Data Analyst & Aspiring Product / Project Manager</p>
-        <a href="mailto:aayush2k@gmail.com" class="btn">Get in Touch</a>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="avatar-wrap">
+          <!-- optionally add profile.jpg in same folder -->
+          <img src="profile.jpg" alt="Aayush Pandey" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="brand-name">Aayush <span class="dot">.</span></div>
+          <div class="brand-role">Project Management • Data Analyst • Product Analyst</div>
+        </div>
       </div>
+
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="glass-btn nav-resume" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
   </header>
 
-  <!-- Experience Section -->
-  <section class="section" id="experience">
+  <!-- HERO -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-left" data-animate="slide-up">
+        <h1>Hi, I’m <span class="accent">Aayush Pandey</span></h1>
+        <p class="lead">
+          Project-focused Analyst building automation and analytics solutions that improve processes, ensure compliance and deliver measurable business value.
+          I blend Python automation, SQL, audit experience (ITGC) and stakeholder coordination to deliver projects on time. Currently pursuing an MBA in Project Management.
+        </p>
+
+        <ul class="hero-highlights">
+          <li>Target roles: <strong>Project Management</strong>, <strong>Data Analyst</strong>, <strong>Product Analyst</strong></li>
+          <li>Open to: Full-time roles & Entry-level project/analyst positions</li>
+          <li>Based in: India · Available for remote/hybrid opportunities</li>
+        </ul>
+
+        <div class="hero-ctas">
+          <a class="glass-btn" href="resume.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a class="cta-outline" href="#contact">Get in touch</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" data-animate="fade-in">
+        <div class="card-inner">
+          <div class="card-title">Contact</div>
+          <div class="card-body">
+            <p class="big">📧 <a href="mailto:aayush2k@gmail.com">aayush2k@gmail.com</a></p>
+            <p class="big">📞 <a href="tel:+919971735999">+91 99717 35999</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/aayush-pandey-3687b91b6/" target="_blank" rel="noopener">linkedin.com/in/aayush-pandey-3687b91b6</a></p>
+            <p>GitHub: <a href="https://github.com/vielnos" target="_blank" rel="noopener">github.com/vielnos</a></p>
+          </div>
+
+          <div class="card-divider"></div>
+
+          <div class="card-resume">
+            <div class="mini">Resume Snapshot</div>
+            <!-- inline resume viewer: opens resume in new tab on click -->
+            <button class="mini-btn" onclick="window.open('resume.pdf','_blank')">Open resume</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="about-intro">
+        I’m a results driven analyst who delivers automation, robust reporting and stronger control environments. My work reduces manual effort, improves data accuracy, and frees stakeholders to focus on decisions. I thrive at the intersection of project delivery, analytics and product facing problem solving translating ambiguous problems into clear deliverables with measurable outcomes.
+      </p>
+
+      <div class="about-grid">
+        <div class="about-box" data-animate="slide-up">
+          <h3>What I bring</h3>
+          <ul>
+            <li>Project coordination: stakeholder mapping, milestones, and on-time delivery</li>
+            <li>Automation: Python pipelines, audit automation (CaseWare/IDEA) and ETL processes</li>
+            <li>Data analysis: SQL, data modelling, reporting & dashboards</li>
+            <li>Audit & compliance: ITGC testing and control remediation support</li>
+            <li>Product thinking: Metrics & KPIs, User Centered Problem Solving, Business Alignment</li>
+          </ul>
+        </div>
+
+        <div class="about-box" data-animate="slide-up" data-delay="80">
+          <h3>Career focus</h3>
+          <p>
+            I am pursuing roles where I can combine project management with analytics leading cross functional projects, building analytic insights for product decisions and automating operational workstreams to scale impact.
+          </p>
+          <p><strong>Short-term goal:</strong> Transition to a Project Manager / Product Analyst role that uses my analytics and automation background.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section alt">
     <div class="container">
       <h2>Experience</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Data Analyst - MM Nissim and Co LLP, Noida</h3>
-          <span>Aug 2024 – Present</span>
+
+      <!-- MM Nissim -->
+      <article class="exp-item" data-animate="fade-in">
+        <div class="exp-left">
+          <h3>Data Analyst</h3>
+          <div class="muted">MM Nissim and Co LLP, Noida - Aug 2024 – Present</div>
+        </div>
+        <div class="exp-right">
           <ul>
-            <li>Automated TDS, GST, and audit workflows using Python and IDEA CaseWare, reducing manual effort by 40%.</li>
-            <li>Optimized 50+ SQL queries, improving accuracy of monthly financial reports and reducing turnaround time by 35%.</li>
-            <li>Conducted ITGC audits to enhance internal controls and ensure compliance.</li>
-            <li>Collaborated with cross-functional teams to streamline project communication and scope alignment.</li>
+            <li>Automated TDS, GST and audit processes using Python, Excel and IDEA/CaseWare reduced manual effort by ~40%.</li>
+            <li>Designed & optimized 50+ SQL queries to power monthly financial exception reports reduced turnaround by 35%.</li>
+            <li>Improved Python ETL scripts to cut processing time from ~10 mins to ~7 mins per dataset (~30% speedup).</li>
+            <li>Performed ITGC audits to strengthen internal controls and regulatory compliance.</li>
+            <li>Coordinated timelines & deliverables across audit and automation projects, improving milestone adherence.</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <h3>Intern - Excelinnova Consultancy Services Pvt Ltd, New Delhi</h3>
-          <span>Apr 2024 – Jul 2024</span>
+      </article>
+
+      <!-- Excelinnova -->
+      <article class="exp-item" data-animate="fade-in" data-delay="60">
+        <div class="exp-left">
+          <h3>Data Analyst Intern</h3>
+          <div class="muted">Excelinnova Consultancy Services Pvt Ltd — Apr 2024 – Jul 2024</div>
+        </div>
+        <div class="exp-right">
           <ul>
-            <li>Managed ETL pipelines processing 50,000+ records daily, ensuring 98% accuracy.</li>
-            <li>Built an AI-powered language conversion model in Python, improving communication efficiency by 30%.</li>
-            <li>Supported project tracking for 6+ ongoing projects, ensuring 95% on-time reporting.</li>
+            <li>Managed ETL pipelines handling 50,000+ records/day with 98% accuracy in transformations.</li>
+            <li>Built an AI-based language conversion model to support multilingual workflows improved communications by 30%.</li>
+            <li>Supported project tracking for >6 projects ensuring timely reporting and cross-team alignment.</li>
           </ul>
         </div>
-        <div class="timeline-item">
-          <h3>Junior Executive Customer Success - Witzeal Technologies Pvt Ltd, Gurgaon</h3>
-          <span>Sep 2022 – Aug 2023</span>
+      </article>
+
+      <!-- Witzeal -->
+      <article class="exp-item" data-animate="fade-in" data-delay="120">
+        <div class="exp-left">
+          <h3>Junior Executive — Customer Success</h3>
+          <div class="muted">Witzeal Technologies Private Limited, Gurgaon — Sep 2022 – Aug 2023</div>
+        </div>
+        <div class="exp-right">
           <ul>
-            <li>Reduced customer resolution time from 5h to 4h (~20%).</li>
-            <li>Improved CSAT by 10% through collaboration with product teams.</li>
-            <li>Created a centralized knowledge base of 100+ articles, lowering ticket volume by 15%.</li>
+            <li>Reduced average customer resolution time from 5 hours to 4 hours (~20%) by root cause analysis and process changes.</li>
+            <li>Partnered with product teams to improve usability achieved +10% CSAT improvement.</li>
+            <li>Resolved 200+ customer queries/month with ~90% first-touch resolution, aiding 12% retention improvement.</li>
           </ul>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section class="section" id="projects">
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
+      <h2>Selected Projects</h2>
 
-        <!-- Resume PDF Projects -->
-        <div class="project-card">
-          <h3>Customer Behavior in Spatial Shopping</h3>
-          <p>Analyzed online vs. offline consumer shopping trends, identifying two distinct buyer segments. Delivered marketing insights that guided strategic campaigns and improved targeting effectiveness.</p>
+      <div class="proj-grid">
+        <div class="proj-card" data-animate="zoom-in">
+          <h3>AutoSync SFTP Automation Tool</h3>
+          <p>Open source Python tool to sync remote SFTP folders, detect changes, create audit logs and send email notifications. Designed for repeatable, auditable file movement in compliance environments.</p>
+          <p class="proj-links"><a href="https://github.com/vielnos/AutoSync-SFTP" target="_blank" rel="noopener">GitHub</a></p>
         </div>
 
-        <div class="project-card">
-          <h3>The Impact of Insomnia on Health</h3>
-          <p>Conducted regression analysis using R and Excel to evaluate insomnia’s impact on health, identifying patterns and potential interventions.</p>
-        </div>
-
-        <!-- GitHub Projects -->
-        <div class="project-card">
+        <div class="proj-card" data-animate="zoom-in" data-delay="60">
           <h3>Excel Batch Cleaner</h3>
-          <p><strong>Tools:</strong> Python, Excel</p>
-          <a href="https://github.com/vielnos/Excel-Batch-Cleaner" target="_blank">View Project</a>
+          <p>Python utilities to clean, merge and standardise large Excel datasets to prepare for analytics and reporting pipelines.</p>
+          <p class="proj-links"><a href="https://github.com/vielnos/Excel-Batch-Cleaner" target="_blank" rel="noopener">GitHub</a></p>
         </div>
 
-        <div class="project-card">
+        <div class="proj-card" data-animate="zoom-in" data-delay="120">
           <h3>File Update Reporter</h3>
-          <p><strong>Tools:</strong> Python, Automation</p>
-          <a href="https://github.com/vielnos/File-Update-Reporter" target="_blank">View Project</a>
+          <p>Automation that tracks file modifications and generates audit friendly change reports integrates with version control and storage systems.</p>
+          <p class="proj-links"><a href="https://github.com/vielnos/File-Update-Reporter" target="_blank" rel="noopener">GitHub</a></p>
         </div>
 
+        <div class="proj-card" data-animate="zoom-in" data-delay="180">
+          <h3>Consumer Behavior in Spatial Shopping</h3>
+          <p>Research project using Python & IBM SPSS to segment shoppers (online vs offline) and recommend targeted campaigns based on cluster analysis.</p>
+        </div>
+
+        <div class="proj-card" data-animate="zoom-in" data-delay="240">
+          <h3>The Impact of Insomnia on Health</h3>
+          <p>Regression analysis with R and Excel to study the correlation between insomnia and health outcomes; presented actionable findings.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills Section -->
-  <section class="section" id="skills">
+  <!-- EDUCATION -->
+  <section id="education" class="section alt">
     <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">Python</div>
-        <div class="skill">C/C++</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Power BI</div>
-        <div class="skill">Tableau</div>
-        <div class="skill">Excel</div>
-        <div class="skill">R / SPSS</div>
-        <div class="skill">DBMS</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">HTML</div>
-        <div class="skill">ETL</div>
-        <div class="skill">Data Visualization</div>
-        <div class="skill">Predictive Analytics</div>
-        <div class="skill">Machine Learning</div>
-        <div class="skill">Teamwork</div>
-        <div class="skill">Communication</div>
+      <h2>Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card" data-animate="fade-in">
+          <h3>MBA — Project Management (Online)</h3>
+          <div class="muted">Manipal University Jaipur — 2024–2026</div>
+        </div>
+
+        <div class="edu-card" data-animate="fade-in" data-delay="60">
+          <h3>PG Diploma — Data Analytics</h3>
+          <div class="muted">Guru Gobind Singh Indraprastha University — 2023–2024 </div>
+        </div>
+
+        <div class="edu-card" data-animate="fade-in" data-delay="120">
+          <h3>BCA — Bachelor of Computer Applications</h3>
+          <div class="muted">Maharaja Surajmal College, IPU — 2018–2022 </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="section" id="contact">
-    <div class="container contact-container">
-      <div class="contact-info">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:aayush2k@gmail.com">aayush2k@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/aayush-pandey-3687b91b6/" target="_blank">linkedin.com/in/aayush-pandey-3687b91b6</a></p>
-        <p>Phone: +91 9971735999</p>
-      </div>
-      <div class="contact-download">
-        <a href="Aayush_Pandey_Resume.pdf" class="btn" download>Download Resume</a>
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills & Tools</h2>
+
+      <div class="skills-wrap">
+        <div class="skill-col">
+          <h4>Programming & Analysis</h4>
+          <p>Python, SQL, R, pandas, NumPy, Matplotlib</p>
+        </div>
+
+        <div class="skill-col">
+          <h4>Data & BI</h4>
+          <p>Power BI, Tableau, Excel (advanced), ETL pipelines</p>
+        </div>
+
+        <div class="skill-col">
+          <h4>Audit & Compliance</h4>
+          <p>IDEA, UAM testing, ITGC testing, Control remediation</p>
+        </div>
+
+        <div class="skill-col">
+          <h4>Product & PM</h4>
+          <p>Stakeholder management, requirement gathering, roadmap coordination, metrics & experimentation</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Aayush Pandey. All Rights Reserved.</p>
+  <!-- CONTACT -->
+  <section id="contact" class="section alt">
+    <div class="container contact-grid">
+      <div class="contact-card" data-animate="fade-in">
+        <h2>Contact Me</h2>
+        <p>If you’re hiring for Project Management, Data Analyst or Product Analyst roles - let’s talk. I focus on delivering automated solutions, clean data pipelines and on-time project delivery.</p>
+
+        <div class="contact-list">
+          <div><strong>Email</strong><br><a href="mailto:aayush2k@gmail.com">aayush2k@gmail.com</a></div>
+          <div><strong>Phone</strong><br><a href="tel:+919971735999">+91 99717 35999</a></div>
+          <div><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/aayush-pandey-3687b91b6/" target="_blank" rel="noopener">linkedin.com/in/aayush-pandey-3687b91b6</a></div>
+          <div><strong>GitHub</strong><br><a href="https://github.com/vielnos" target="_blank" rel="noopener">github.com/vielnos</a></div>
+        </div>
+
+        <div class="contact-cta">
+          <a href="mailto:aayush2k@gmail.com?subject=Opportunity%20to%20connect" class="glass-btn">Email Me</a>
+          <a href="resume.pdf" class="cta-outline" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+
+      <div class="contact-visual" data-animate="zoom-in">
+        <div class="contact-visual-inner">
+          <div class="stat">
+            <div class="num">40%</div>
+            <div class="label">Automation Reduction</div>
+          </div>
+
+          <div class="stat">
+            <div class="num">50+</div>
+            <div class="label">SQL Queries Optimized</div>
+          </div>
+
+          <div class="stat">
+            <div class="num">2</div>
+            <div class="label">ITGC Audits</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© 2025 Aayush Pandey</div>
+      <div class="footer-links">
+        <a href="resume.pdf" target="_blank">Resume</a>
+        <a href="https://github.com/vielnos" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/aayush-pandey-3687b91b6/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
