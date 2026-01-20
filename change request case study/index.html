@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Change Request Automation – Case Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <span class="badge">Product Case Study</span>
+    <h1>Change Request Tracker Automation</h1>
+    <p class="subtitle">Workflow Automation / PMO Tool built using n8n, Google Forms, Sheets, and Gmail.</p>
+
+    <div class="hero-actions">
+      <a href="https://github.com/vielnos/Change_Request_Automation_N8N" target="_blank" class="btn btn-primary">View on GitHub</a>
+      <a href="#workflow" class="btn btn-outline">View Workflow</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <section class="reveal">
+    <h2>Overview</h2>
+    <p>
+      The Change Request Tracker Automation is an end-to-end workflow designed to automate the intake, approval, and tracking of change requests in a PMO-style process.
+    </p>
+    <p>
+      It replaces manual tracking via email or spreadsheets with a structured, auditable, and automated approval system.
+    </p>
+  </section>
+
+  <section class="reveal">
+    <h2>Problem Statement</h2>
+    <ul>
+      <li>No unique identifier for each request</li>
+      <li>No centralized tracking system</li>
+      <li>No standard approval process</li>
+      <li>No visibility into request status</li>
+      <li>High risk of missed approvals</li>
+      <li>No audit trail</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Objective</h2>
+    <ul>
+      <li>Standardize change request intake</li>
+      <li>Generate unique Request IDs automatically</li>
+      <li>Route requests for approval via email</li>
+      <li>Track approval decisions</li>
+      <li>Update status in a central register</li>
+      <li>Notify requesters of decisions</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Solution Architecture</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Google Forms</h3>
+        <p>Structured intake of change requests.</p>
+      </div>
+      <div class="card">
+        <h3>Google Sheets</h3>
+        <p>Central Change Register.</p>
+      </div>
+      <div class="card">
+        <h3>n8n</h3>
+        <p>Workflow automation engine.</p>
+      </div>
+      <div class="card">
+        <h3>Gmail</h3>
+        <p>Approval and notifications.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal" id="workflow">
+    <h2>Workflow Flow</h2>
+    <img src="Change Request Flow.png" alt="Workflow Diagram" style="width:100%; border-radius:14px; border:1px solid #1f2a44; margin-top:18px;" />
+  </section>
+
+  <section class="reveal">
+    <h2>Workflow Design</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Step 1 – Intake</h4>
+        <p>Users submit requests via Google Forms.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 2 – Trigger</h4>
+        <p>n8n detects a new row in Google Sheets.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 3 – Metadata Enrichment</h4>
+        <p>Unique Request ID, status, and timestamp are generated.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 4 – Approval Routing</h4>
+        <p>Email with Approve / Reject buttons is sent.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 5 – Decision Handling</h4>
+        <p>IF logic routes Approved vs Rejected paths.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 6 – Status Update</h4>
+        <p>Exact originating row is updated.</p>
+      </div>
+      <div class="timeline-item">
+        <h4>Step 7 – Requester Notification</h4>
+        <p>Requester is notified via email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Automated change intake</li>
+      <li>Unique Request ID generation</li>
+      <li>Email-based approval flow</li>
+      <li>Row-level data integrity</li>
+      <li>Centralized Change Register</li>
+      <li>Real-time status updates</li>
+      <li>Requester notification</li>
+      <li>Audit-friendly design</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <h2>Results & Impact</h2>
+    <div class="metric-grid">
+      <div class="metric"><strong>100%</strong> Automation</div>
+      <div class="metric"><strong>0</strong> Manual Tracking</div>
+      <div class="metric"><strong>0</strong> Lost Requests</div>
+      <div class="metric"><strong>PMO</strong> Governance</div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2026 Aayush Pandey</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

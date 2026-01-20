@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoSync — Product Case Study</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <span class="badge">Product Case Study</span>
+      <h1>AutoSync</h1>
+      <p class="subtitle">
+        A configuration-driven automation tool that syncs SFTP folders, detects file changes, and generates
+        audit-ready Excel reports — eliminating manual effort in compliance workflows.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#overview">Read Case Study</a>
+        <a class="btn btn-outline" href="https://vielnos.github.io/Resume-Website/">Back to Portfolio</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="overview">
+      <h2>Project Overview</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>What is AutoSync?</h3>
+          <p>
+            AutoSync is a lightweight automation tool I developed to solve a real operational problem in an
+            audit and compliance workflow. The team regularly receives large volumes of files through an
+            SFTP server using WinSCP. These files must be downloaded, tracked, stored on OneDrive, and
+            shared with team members daily.
+          </p>
+          <p>
+            Before AutoSync, the entire workflow was manual, time-consuming, and error-prone. AutoSync
+            automates the complete chain — from SFTP synchronization to reporting and email notifications.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>My Role</h3>
+          <ul>
+            <li>End-to-end product design and development</li>
+            <li>Requirements gathering with audit team</li>
+            <li>Python automation scripting</li>
+            <li>WinSCP CLI integration</li>
+            <li>Excel report generation</li>
+            <li>Configuration and documentation</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Tech Stack</h3>
+          <ul>
+            <li>Python</li>
+            <li>WinSCP (CLI)</li>
+            <li>Pandas & OpenPyXL</li>
+            <li>JSON configuration</li>
+            <li>SMTP email automation</li>
+            <li>Git & GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="problem">
+      <h2>The Problem</h2>
+      <p>
+        The audit team downloaded dozens of files daily from an SFTP server. This process involved opening
+        WinSCP, navigating multiple folders, manually downloading files, copying them into OneDrive,
+        updating an Excel tracking sheet, and notifying the manager.
+      </p>
+      <p>This workflow was not just inefficient — it introduced real operational risks.</p>
+      <ul>
+        <li>Files were sometimes missed or downloaded twice</li>
+        <li>There was no reliable way to detect updated vs unchanged files</li>
+        <li>Manual Excel tracking was inconsistent</li>
+        <li>Human error created audit traceability gaps</li>
+        <li>The process took 1.5–2 hours every day</li>
+      </ul>
+      <p>
+        The core question that triggered this project was simple:
+        <strong>“Can we automate all of this?”</strong>
+      </p>
+    </section>
+
+    <section id="approach">
+      <h2>How I Approached the Problem</h2>
+      <p>
+        Instead of making assumptions, I began by observing the real workflow and speaking with the person
+        who performed this task daily. I asked them to demonstrate the exact folder structure, naming
+        conventions, and how they currently tracked new files.
+      </p>
+      <ul>
+        <li>Mapped WinSCP remote directories</li>
+        <li>Reviewed OneDrive folder layout</li>
+        <li>Documented manual steps and pain points</li>
+        <li>Identified failure points and inefficiencies</li>
+      </ul>
+      <p>
+        Once I understood the full workflow, I broke the problem into smaller, testable automation stages
+        rather than building a monolithic script.
+      </p>
+    </section>
+
+    <section id="solution">
+      <h2>The Solution</h2>
+      <p>AutoSync automates the entire workflow using a configuration-driven architecture.</p>
+      <ul>
+        <li>Connects to SFTP using WinSCP CLI</li>
+        <li>Synchronizes remote folders to a local directory</li>
+        <li>Scans all files and extracts metadata</li>
+        <li>Compares with previous runs to detect changes</li>
+        <li>Categorizes data into New Data, Old Data, and New Files</li>
+        <li>Generates clean Excel reports</li>
+        <li>Sends automated email notifications</li>
+      </ul>
+      <p>
+        The entire tool is driven by a single <strong>config.json</strong> file, allowing credentials,
+        folder paths, and settings to be updated without touching the code.
+      </p>
+    </section>
+
+    <section id="architecture">
+      <h2>Why I Designed It This Way</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Excel Output</h3>
+          <p>
+            The audit team required Excel reports because spreadsheets are the standard format for
+            documentation and audit evidence. The output includes clearly structured sheets for
+            New Data, Old Data, and Newly Added Files.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Config-First Design</h3>
+          <p>
+            Credentials, folder paths, and environment settings are never hardcoded. This improves
+            security, flexibility, and long-term maintainability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>WinSCP CLI</h3>
+          <p>
+            Python SFTP libraries were slower and unreliable for large directories. WinSCP was already
+            trusted by the team and provided faster, more stable synchronization.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Clear Data Categorization</h3>
+          <p>
+            Separating Old Data, New Data, and New Files makes audit reviews simple and provides a
+            transparent change log.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <h2>Detailed Workflow</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>1. SFTP Synchronization</h4>
+          <p>
+            A WinSCP command file is auto-generated and executed to log into the SFTP server, navigate
+            to the target directory, and synchronize all changed files into a local folder.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>2. Folder Scanning</h4>
+          <p>
+            The Python script recursively scans the local folder, extracts file names, paths, and
+            last-modified timestamps, and stores them in a structured DataFrame.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>3. Change Detection</h4>
+          <p>
+            The script compares the current run with the previous run to identify new files, modified
+            files, unchanged files, and potential duplicates.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>4. Excel Report Generation</h4>
+          <p>
+            Three structured sheets are generated: New Data, Old Data, and New Files. This format
+            provides an audit-ready change log.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <h4>5. Email Notification</h4>
+          <p>
+            The final Excel report is automatically emailed to the manager and team, eliminating the
+            need for manual status updates.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="challenges">
+      <h2>Challenges Faced</h2>
+      <ul>
+        <li>Timestamp normalization between Windows and SFTP</li>
+        <li>Handling duplicate filenames with different timestamps</li>
+        <li>Preventing Excel format mismatches</li>
+        <li>Validating malformed JSON configuration files</li>
+        <li>Structuring the project for GitHub release</li>
+      </ul>
+    </section>
+
+    <section id="impact">
+      <h2>Impact</h2>
+      <div class="metric-grid">
+        <div class="metric">
+          <strong>~5 min</strong>
+          Daily runtime
+        </div>
+        <div class="metric">
+          <strong>80–90%</strong>
+          Time saved
+        </div>
+        <div class="metric">
+          <strong>0</strong>
+          Missed files
+        </div>
+        <div class="metric">
+          <strong>100%</strong>
+          Audit traceability
+        </div>
+      </div>
+      <p>
+        Manual effort dropped from 1.5–2 hours per day to roughly 5 minutes. After automation, no files
+        were missed, and the reporting process became standardized and predictable.
+      </p>
+    </section>
+
+    <section id="learnings">
+      <h2>What I Learned</h2>
+      <ul>
+        <li>Understanding the manual process is critical before automating</li>
+        <li>Small tools can deliver massive business value</li>
+        <li>Config-driven design increases product longevity</li>
+        <li>Clear documentation improves adoption</li>
+        <li>Reliability matters more than cleverness</li>
+      </ul>
+    </section>
+
+    <section id="future">
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>Automatic upload to OneDrive / Google Drive</li>
+        <li>GUI interface for non-technical users</li>
+        <li>Deleted file detection</li>
+        <li>Detailed logs and dashboards</li>
+        <li>Standalone EXE packaging</li>
+        <li>Multi-SFTP support</li>
+        <li>Cloud-based deployment</li>
+      </ul>
+    </section>
+
+    <section id="closing">
+      <h2>Closing Summary</h2>
+      <p>
+        AutoSync started from a simple request — “Can we automate this repetitive process?” By
+        understanding the workflow deeply, speaking with the people doing the work, and designing a
+        robust, configuration-driven solution, I built a tool that now runs reliably every day.
+      </p>
+      <p>
+        It saves time, reduces errors, improves audit traceability, and standardizes an operationally
+        critical process. This project reflects real-world problem-solving, product thinking, and
+        end-to-end ownership.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© Aayush Pandey — AutoSync Product Case Study</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
