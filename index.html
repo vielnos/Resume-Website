@@ -4,26 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aayush Pandey — Portfolio</title>
-  <meta name="description" content="Aayush Pandey — Data Analyst, Automation Developer, ITGC Audit Analyst. Seeking roles in Project Management, Data Analysis and Product Analytics." />
+  <meta name="description" content="Aayush Pandey — Data Analyst, Automation Developer, ITGC Audit Analyst." />
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Optional: small icon -->
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 <body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress"></div>
 
   <!-- NAV -->
   <header class="site-header">
     <div class="container nav-inner">
       <div class="brand">
         <div class="avatar-wrap">
-          <!-- optionally add profile.jpg in same folder -->
-          <img src="profile.jpg" alt="Aayush Pandey" onerror="this.style.display='none'">
+          <img src="profile.jpg" alt="Aayush Pandey" onerror="this.style.display='none'; this.parentElement.classList.add('fallback')">
+          <div class="avatar-fallback">AP</div>
         </div>
         <div>
           <div class="brand-name">Aayush <span class="dot">.</span></div>
@@ -46,12 +44,15 @@
 
   <!-- HERO -->
   <section id="hero" class="hero-section">
+    <canvas id="networkCanvas"></canvas>
     <div class="container hero-grid">
       <div class="hero-left" data-animate="slide-up">
-        <h1>Hi, I’m <span class="accent">Aayush Pandey</span></h1>
-        <p class="lead">
-          Project-focused Analyst building automation and analytics solutions that improve processes, ensure compliance and deliver measurable business value.
-          I blend Python automation, SQL, audit experience (ITGC) and stakeholder coordination to deliver projects on time. Currently pursuing an MBA in Project Management.
+        <h1>Hi, I'm <span class="accent">Aayush Pandey</span></h1>
+        <p class="lead typewriter-container">
+          I'm a <span id="typing-text" class="accent"></span><span class="cursor">|</span>
+        </p>
+        <p class="lead-sub">
+          I am Data Analyst building automation and analytics solutions that improve processes, ensure compliance and deliver measurable business value.
         </p>
 
         <ul class="hero-highlights">
@@ -80,7 +81,6 @@
 
           <div class="card-resume">
             <div class="mini">Resume Snapshot</div>
-            <!-- inline resume viewer: opens resume in new tab on click -->
             <button class="mini-btn" onclick="window.open('Aayush_resume.pdf','_blank')">Open resume</button>
           </div>
         </div>
@@ -90,28 +90,29 @@
 
   <!-- ABOUT -->
   <section id="about" class="section">
+    <div class="orb orb-1"></div>
     <div class="container">
       <h2>About Me</h2>
       <p class="about-intro">
-        I’m a results driven analyst who delivers automation, robust reporting and stronger control environments. My work reduces manual effort, improves data accuracy, and frees stakeholders to focus on decisions. I thrive at the intersection of project delivery, analytics and product facing problem solving translating ambiguous problems into clear deliverables with measurable outcomes.
+        I'm a results driven analyst who delivers automation, robust reporting and stronger control environments. My work reduces manual effort, improves data accuracy, and frees stakeholders to focus on decisions.
       </p>
 
       <div class="about-grid">
-        <div class="about-box" data-animate="slide-up">
+        <div class="about-box spotlight-card" data-animate="slide-up">
           <h3>What I bring</h3>
           <ul>
             <li>Project coordination: stakeholder mapping, milestones, and on-time delivery</li>
             <li>Automation: Python pipelines, audit automation (CaseWare/IDEA) and ETL processes</li>
             <li>Data analysis: SQL, data modelling, reporting & dashboards</li>
             <li>Audit & compliance: ITGC testing and control remediation support</li>
-            <li>Product thinking: Metrics & KPIs, User Centered Problem Solving, Business Alignment</li>
+            <li>Product thinking: Metrics & KPIs, User Centered Problem Solving</li>
           </ul>
         </div>
 
-        <div class="about-box" data-animate="slide-up" data-delay="80">
+        <div class="about-box spotlight-card" data-animate="slide-up" data-delay="80">
           <h3>Career focus</h3>
           <p>
-            I am pursuing roles where I can combine project management with analytics leading cross functional projects, building analytic insights for product decisions and automating operational workstreams to scale impact.
+            I am pursuing roles where I can combine project management with analytics — leading cross functional projects, building analytic insights for product decisions and automating operational workstreams to scale impact.
           </p>
           <p><strong>Short-term goal:</strong> Transition to a Project Manager / Product Analyst role that uses my analytics and automation background.</p>
         </div>
@@ -119,115 +120,175 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- EXPERIENCE (Timeline Layout) -->
   <section id="experience" class="section alt">
     <div class="container">
       <h2>Experience</h2>
+      
+      <div class="timeline" id="experience-timeline">
+        <div class="timeline-line">
+          <div class="timeline-progress"></div>
+        </div>
 
-      <!-- MM Nissim -->
-      <article class="exp-item" data-animate="fade-in">
-        <div class="exp-left">
-          <h3>Data Analyst</h3>
-          <div class="muted">MM Nissim and Co LLP, Noida - Aug 2024 – Present</div>
-        </div>
-        <div class="exp-right">
-          <ul>
-            <li>Automated TDS, GST and audit processes using Python, Excel and IDEA/CaseWare reduced manual effort by ~40%.</li>
-            <li>Designed & optimized 50+ SQL queries to power monthly financial exception reports reduced turnaround by 35%.</li>
-            <li>Improved Python ETL scripts to cut processing time from ~10 mins to ~7 mins per dataset (~30% speedup).</li>
-            <li>Performed ITGC audits to strengthen internal controls and regulatory compliance.</li>
-            <li>Coordinated timelines & deliverables across audit and automation projects, improving milestone adherence.</li>
-          </ul>
-        </div>
-      </article>
+        <!-- Job 1 -->
+        <article class="exp-item timeline-item" data-animate="slide-up">
+          <div class="exp-marker"></div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <h3>Data Analyst</h3>
+              <div class="muted">MM Nissim and Co LLP, Noida · Aug 2024 – Present</div>
+            </div>
+            <ul>
+              <li>Automated TDS, GST and audit processes using Python, Excel and IDEA/CaseWare — reduced manual effort by ~40%.</li>
+              <li>Designed & optimized 50+ SQL queries to power monthly financial exception reports — reduced turnaround by 35%.</li>
+              <li>Improved Python ETL scripts to cut processing time from ~10 mins to ~7 mins per dataset (~30% speedup).</li>
+              <li>Performed ITGC audits to strengthen internal controls and regulatory compliance.</li>
+              <li>Coordinated timelines & deliverables across audit and automation projects.</li>
+            </ul>
+          </div>
+        </article>
 
-      <!-- Excelinnova -->
-      <article class="exp-item" data-animate="fade-in" data-delay="60">
-        <div class="exp-left">
-          <h3>Data Analyst Intern</h3>
-          <div class="muted">Excelinnova Consultancy Services Pvt Ltd — Apr 2024 – Jul 2024</div>
-        </div>
-        <div class="exp-right">
-          <ul>
-            <li>Managed ETL pipelines handling 50,000+ records/day with 98% accuracy in transformations.</li>
-            <li>Built an AI-based language conversion model to support multilingual workflows improved communications by 30%.</li>
-            <li>Supported project tracking for >6 projects ensuring timely reporting and cross-team alignment.</li>
-          </ul>
-        </div>
-      </article>
+        <!-- Job 2 -->
+        <article class="exp-item timeline-item" data-animate="slide-up" data-delay="60">
+          <div class="exp-marker"></div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <h3>Data Analyst Intern</h3>
+              <div class="muted">Excelinnova Consultancy Services · Apr 2024 – Jul 2024</div>
+            </div>
+            <ul>
+              <li>Managed ETL pipelines handling 50,000+ records/day with 98% accuracy in transformations.</li>
+              <li>Built an AI-based language conversion model to support multilingual workflows — improved communications by 30%.</li>
+              <li>Supported project tracking for >6 projects ensuring timely reporting and cross-team alignment.</li>
+            </ul>
+          </div>
+        </article>
 
-      <!-- Witzeal -->
-      <article class="exp-item" data-animate="fade-in" data-delay="120">
-        <div class="exp-left">
-          <h3>Junior Executive — Customer Success</h3>
-          <div class="muted">Witzeal Technologies Private Limited, Gurgaon — Sep 2022 – Aug 2023</div>
-        </div>
-        <div class="exp-right">
-          <ul>
-            <li>Reduced average customer resolution time from 5 hours to 4 hours (~20%) by root cause analysis and process changes.</li>
-            <li>Partnered with product teams to improve usability achieved +10% CSAT improvement.</li>
-            <li>Resolved 200+ customer queries/month with ~90% first-touch resolution, aiding 12% retention improvement.</li>
-          </ul>
-        </div>
-      </article>
+        <!-- Job 3 -->
+        <article class="exp-item timeline-item" data-animate="slide-up" data-delay="120">
+          <div class="exp-marker"></div>
+          <div class="exp-content">
+            <div class="exp-header">
+              <h3>Junior Executive — Customer Success</h3>
+              <div class="muted">Witzeal Technologies, Gurgaon · Sep 2022 – Aug 2023</div>
+            </div>
+            <ul>
+              <li>Reduced average customer resolution time from 5 hours to 4 hours (~20%) by root cause analysis.</li>
+              <li>Partnered with product teams to improve usability — achieved +10% CSAT improvement.</li>
+              <li>Resolved 200+ customer queries/month with ~90% first-touch resolution.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="container">
-    <h2>Selected Projects</h2>
+  <section id="projects" class="section">
+    <div class="orb orb-2"></div>
+    <div class="container">
+      <h2>Selected Projects</h2>
 
-    <div class="proj-grid">
+      <div class="proj-grid">
+        <!-- Project 1: PhoenixAIScan -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-tech="Python,Security,AI">
+          <div class="card-shine"></div>
+          <h3>PhoenixAIScan</h3>
+          <p>Pre-Execution AI Code Risk Scanner. Scans AI-generated code before execution, detects dangerous operations, highlights risky lines, and explains impact in plain English.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">FastAPI</span>
+            <span class="tech-pill">Security</span>
+            <span class="tech-pill">AI Safety</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/vielnos/PhoenixAIScan" target="_blank" class="btn secondary">GitHub</a>
+            <a href="phoenix-aiscan-case-study/index.html" target="_blank" class="btn secondary">Case Study</a>
+          </div>
+        </div>
 
-      <!-- Change Request Card -->
-      <div class="proj-card" data-animate="zoom-in">
-        <h3>Change Request Workflow Automation</h3>
-        <p>
-          Automated change request approval workflow with email notifications, audit trails, and role-based approvals.
-          Designed to improve governance, traceability, and turnaround time in IT operations.
-        </p>
-        <p class="proj-links">
-          <a href="https://github.com/vielnos/Change_Request_Automation_N8N" target="_blank" rel="noopener" class="btn secondary">GitHub</a>
-          <br>
-          <a href="change request case study/index.html" class="btn secondary" target="_blank" rel="noopener">Case Study</a>
-        </p>
-      </div>
+        <!-- Project 2 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-tech="N8N,Automation">
+          <div class="card-shine"></div>
+          <h3>Change Request Workflow Automation</h3>
+          <p>Automated change request approval workflow with email notifications, audit trails, and role-based approvals.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">n8n</span>
+            <span class="tech-pill">Google Apps Script</span>
+            <span class="tech-pill">Automation</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/vielnos/Change_Request_Automation_N8N" target="_blank" class="btn secondary">GitHub</a>
+            <a href="change request case study/index.html" target="_blank" class="btn secondary">Case Study</a>
+          </div>
+        </div>
 
-      <!-- AutoSync Card -->
-      <div class="proj-card" data-animate="zoom-in">
-        <h3>AutoSync SFTP Automation Tool</h3>
-        <p>
-          Open source Python tool to sync remote SFTP folders, detect changes, create audit logs and send email notifications.
-          Designed for repeatable, auditable file movement in compliance environments.
-        </p>
-        <p class="proj-links">
-          <a href="https://github.com/vielnos/AutoSync-SFTP" target="_blank" rel="noopener" class="btn secondary">GitHub</a>
-          <br>
-          <a href="Autosync case study/index.html" class="btn secondary" target="_blank" rel="noopener">Case Study</a>
-        </p>
-      </div>
+        <!-- Project 3 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-tech="Python,SFTP">
+          <div class="card-shine"></div>
+          <h3>AutoSync SFTP Automation Tool</h3>
+          <p>Open source Python tool to sync remote SFTP folders, detect changes, create audit logs and send email notifications.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">SFTP</span>
+            <span class="tech-pill">Audit</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/vielnos/AutoSync-SFTP" target="_blank" class="btn secondary">GitHub</a>
+            <a href="Autosync case study/index.html" target="_blank" class="btn secondary">Case Study</a>
+          </div>
+        </div>
 
-        <div class="proj-card" data-animate="zoom-in" data-delay="60">
+        <!-- Project 4 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-delay="60" data-tech="Python,Excel">
+          <div class="card-shine"></div>
           <h3>Excel Batch Cleaner</h3>
           <p>Python utilities to clean, merge and standardise large Excel datasets to prepare for analytics and reporting pipelines.</p>
-          <p class="proj-links"><a href="https://github.com/vielnos/Excel-Batch-Cleaner" target="_blank" rel="noopener" class="btn secondary">GitHub</a></p>
+          <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Pandas</span>
+            <span class="tech-pill">ETL</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/vielnos/Excel-Batch-Cleaner" target="_blank" class="btn secondary">GitHub</a>
+          </div>
         </div>
 
-        <div class="proj-card" data-animate="zoom-in" data-delay="120">
+        <!-- Project 5 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-delay="120" data-tech="Python,Audit">
+          <div class="card-shine"></div>
           <h3>File Update Reporter</h3>
-          <p>Automation that tracks file modifications and generates audit friendly change reports integrates with version control and storage systems.</p>
-          <p class="proj-links"><a href="https://github.com/vielnos/File-Update-Reporter" target="_blank" rel="noopener" class="btn secondary">GitHub</a></p>
+          <p>Automation that tracks file modifications and generates audit friendly change reports.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">Monitoring</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/vielnos/File-Update-Reporter" target="_blank" class="btn secondary">GitHub</a>
+          </div>
         </div>
 
-        <div class="proj-card" data-animate="zoom-in" data-delay="180">
+        <!-- Project 6 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-delay="180" data-tech="Python,SPSS">
+          <div class="card-shine"></div>
           <h3>Consumer Behavior in Spatial Shopping</h3>
-          <p>Research project using Python & IBM SPSS to segment shoppers (online vs offline) and recommend targeted campaigns based on cluster analysis.</p>
+          <p>Research project using Python & IBM SPSS to segment shoppers and recommend targeted campaigns.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">Python</span>
+            <span class="tech-pill">SPSS</span>
+            <span class="tech-pill">Clustering</span>
+          </div>
         </div>
 
-        <div class="proj-card" data-animate="zoom-in" data-delay="240">
+        <!-- Project 7 -->
+        <div class="proj-card tilt-card spotlight-card" data-animate="zoom-in" data-delay="240" data-tech="R,Excel">
+          <div class="card-shine"></div>
           <h3>The Impact of Insomnia on Health</h3>
-          <p>Regression analysis with R and Excel to study the correlation between insomnia and health outcomes; presented actionable findings.</p>
+          <p>Regression analysis with R and Excel to study the correlation between insomnia and health outcomes.</p>
+          <div class="tech-stack">
+            <span class="tech-pill">R</span>
+            <span class="tech-pill">Regression</span>
+          </div>
         </div>
       </div>
     </div>
@@ -238,19 +299,22 @@
     <div class="container">
       <h2>Education</h2>
       <div class="edu-grid">
-        <div class="edu-card" data-animate="fade-in">
+        <div class="edu-card spotlight-card" data-animate="fade-in">
+          <div class="edu-icon">🎓</div>
           <h3>MBA — Project Management (Online)</h3>
-          <div class="muted">Manipal University Jaipur — 2024–2026</div>
+          <div class="muted">Manipal University Jaipur · 2024–2026</div>
         </div>
 
-        <div class="edu-card" data-animate="fade-in" data-delay="60">
+        <div class="edu-card spotlight-card" data-animate="fade-in" data-delay="60">
+          <div class="edu-icon">📊</div>
           <h3>PG Diploma — Data Analytics</h3>
-          <div class="muted">Guru Gobind Singh Indraprastha University — 2023–2024 </div>
+          <div class="muted">Guru Gobind Singh Indraprastha University · 2023–2024</div>
         </div>
 
-        <div class="edu-card" data-animate="fade-in" data-delay="120">
+        <div class="edu-card spotlight-card" data-animate="fade-in" data-delay="120">
+          <div class="edu-icon">💻</div>
           <h3>BCA — Bachelor of Computer Applications</h3>
-          <div class="muted">Maharaja Surajmal College, IPU — 2018–2022 </div>
+          <div class="muted">Maharaja Surajmal College, IPU · 2018–2022</div>
         </div>
       </div>
     </div>
@@ -260,26 +324,33 @@
   <section id="skills" class="section">
     <div class="container">
       <h2>Skills & Tools</h2>
-
       <div class="skills-wrap">
-        <div class="skill-col">
+        <div class="skill-col spotlight-card">
           <h4>Programming & Analysis</h4>
-          <p>Python, SQL, R, pandas, NumPy, Matplotlib</p>
+          <div class="skill-tags">
+            <span>Python</span><span>SQL</span><span>R</span><span>pandas</span><span>NumPy</span>
+          </div>
         </div>
 
-        <div class="skill-col">
+        <div class="skill-col spotlight-card">
           <h4>Data & BI</h4>
-          <p>Power BI, Tableau, Excel (advanced), ETL pipelines</p>
+          <div class="skill-tags">
+            <span>Power BI</span><span>Tableau</span><span>Excel</span><span>ETL</span>
+          </div>
         </div>
 
-        <div class="skill-col">
+        <div class="skill-col spotlight-card">
           <h4>Audit & Compliance</h4>
-          <p>IDEA, UAM testing, ITGC testing, Control remediation</p>
+          <div class="skill-tags">
+            <span>IDEA</span><span>ITGC</span><span>Control Remediation</span><span>UAM</span>
+          </div>
         </div>
 
-        <div class="skill-col">
+        <div class="skill-col spotlight-card">
           <h4>Product & PM</h4>
-          <p>Stakeholder management, requirement gathering, roadmap coordination, metrics & experimentation</p>
+          <div class="skill-tags">
+            <span>Stakeholder Mgmt</span><span>Agile</span><span>Roadmaps</span><span>KPIs</span>
+          </div>
         </div>
       </div>
     </div>
@@ -290,36 +361,34 @@
     <div class="container contact-grid">
       <div class="contact-card" data-animate="fade-in">
         <h2>Contact Me</h2>
-        <p>If you’re hiring for Project Management, Data Analyst or Product Analyst roles - let’s talk. I focus on delivering automated solutions, clean data pipelines and on-time project delivery.</p>
+        <p>If you're hiring for Project Management, Data Analyst or Product Analyst roles — let's talk.</p>
 
         <div class="contact-list">
           <div><strong>Email</strong><br><a href="mailto:aayush2k@gmail.com">aayush2k@gmail.com</a></div>
           <div><strong>Phone</strong><br><a href="tel:+919971735999">+91 99717 35999</a></div>
-          <div><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/aayush-pandey2/" target="_blank" rel="noopener">linkedin.com/in/aayush-pandey2/</a></div>
-          <div><strong>GitHub</strong><br><a href="https://github.com/vielnos" target="_blank" rel="noopener">github.com/vielnos</a></div>
+          <div><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/aayush-pandey2/" target="_blank">linkedin.com/in/aayush-pandey2/</a></div>
+          <div><strong>GitHub</strong><br><a href="https://github.com/vielnos" target="_blank">github.com/vielnos</a></div>
         </div>
 
         <div class="contact-cta">
           <a href="mailto:aayush2k@gmail.com?subject=Opportunity%20to%20connect" class="glass-btn">Email Me</a>
-          <a href="Aayush_resume.pdf" class="cta-outline" target="_blank" rel="noopener">Download CV</a>
+          <a href="Aayush_resume.pdf" class="cta-outline" target="_blank">Download CV</a>
         </div>
       </div>
 
       <div class="contact-visual" data-animate="zoom-in">
         <div class="contact-visual-inner">
-          <div class="stat">
-            <div class="num">40%</div>
-            <div class="label">Automation Reduction</div>
+          <div class="stat" data-target="40">
+            <div class="num">0%</div>
+            <div class="label">Automation<br>Reduction</div>
           </div>
-
-          <div class="stat">
-            <div class="num">50+</div>
-            <div class="label">SQL Queries Optimized</div>
+          <div class="stat" data-target="50">
+            <div class="num">0+</div>
+            <div class="label">SQL Queries<br>Optimized</div>
           </div>
-
-          <div class="stat">
-            <div class="num">2</div>
-            <div class="label">ITGC Audits</div>
+          <div class="stat" data-target="98">
+            <div class="num">0%</div>
+            <div class="label">ETL<br>Accuracy</div>
           </div>
         </div>
       </div>
@@ -338,7 +407,6 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

